@@ -1,0 +1,9 @@
+﻿Nam - Quyền: Quản lý tiện cắt tóc (Đặt lịch trực tuyến)
+Giang Nam - Long: Quản lý homestay
+Tiên - Hồng: Quản lý cửa hàng phụ kiện
+Hải Nam - Việt Hiếu: Quản lý tiệm trà sữa
+Tiến Anh - Sơn Tùng: Quản lý nhà hàng (Đặt bàn trực tuyến)
+Tân: Mp3.zing.vn
+Nghiệp: Quản lý rạp chiếu phim
+Trung: Quản lý nhân sự
+Phương: Quản lý thư viện (Mượn sách trực tuyến)
