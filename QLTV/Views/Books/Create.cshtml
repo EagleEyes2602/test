@@ -4,14 +4,18 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    .hidden1{
+        opacity: .5;
+    }
+</style>
 <h2>Create</h2>
 
 
 @using (Html.BeginForm("Create", "Books", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Book</h4>
         <hr />
@@ -64,12 +68,26 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <textarea class="" name="Description" id="description" hidden></textarea>
+                <script>
+                    var editor = CKEDITOR.replace('description');
+                    editor.on('change', function (evt) {
+                        $('#description').html(evt.editor.getData());
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
+
+    <button id="sent">Gửi</button>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
@@ -81,5 +99,24 @@
 
 
 <script>
-
+    $('#sent').click(function () {
+        $.ajax({
+            url: '/Books/Add1',
+            type: 'POST',
+            beforeSend: function (xhr) {
+                $('body').addClass('hidden1');
+            },
+            //dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+            data: { pageNum: 1, pageSize: 20 }
+        })
+            .done(function (res) {
+                console.log(res);
+            })
+            .fail(function () {
+                
+            })
+            .always(function () {
+                $('body').removeClass('hidden1');
+            });
+    });
 </script>

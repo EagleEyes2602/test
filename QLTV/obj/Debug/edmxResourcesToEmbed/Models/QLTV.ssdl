@@ -11,6 +11,7 @@
     <Property Name="Date" Type="int" />
     <Property Name="Price" Type="float" />
     <Property Name="Image" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Publisher">
     <Key>

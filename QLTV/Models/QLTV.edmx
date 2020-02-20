@@ -16,6 +16,7 @@
           <Property Name="Date" Type="int" />
           <Property Name="Price" Type="float" />
           <Property Name="Image" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Publisher">
           <Key>
@@ -60,6 +61,7 @@
           <Property Name="Date" Type="Int32" />
           <Property Name="Price" Type="Double" />
           <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Publisher" Relationship="Self.FK__Book__PublisherI__398D8EEE" FromRole="Book" ToRole="Publisher" />
         </EntityType>
         <EntityType Name="Publisher">
@@ -106,6 +108,7 @@
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

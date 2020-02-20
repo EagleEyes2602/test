@@ -6,8 +6,18 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Content/Plugins/ckeditor/styles.js"></script>
+    <script src="~/Content/Plugins/ckeditor/ckeditor.js"></script>
+    <script src="~/Content/Plugins/ckfinder/ckfinder.js"></script>
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
+    @if (Session["UserAuthentication"] == null)
+    {
+        <script>
+            location.href = '/Home/Login';
+        </script>
+    }
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -35,7 +45,6 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

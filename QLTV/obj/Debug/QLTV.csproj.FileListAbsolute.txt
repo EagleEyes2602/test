@@ -81,8 +81,14 @@ D:\Students\net\QLTV\QLTV\bin\Antlr3.Runtime.pdb
 D:\Students\net\QLTV\QLTV\bin\System.Diagnostics.DiagnosticSource.xml
 D:\Students\net\QLTV\QLTV\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 D:\Students\net\QLTV\QLTV\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csproj.CoreCompileInputs.cache
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csproj.CopyComplete
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.dll
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.pdb
+D:\Students\net\QLTV\QLTV\bin\Oracle.ManagedDataAccess.dll
+D:\Students\net\QLTV\QLTV\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Students\net\QLTV\QLTV\bin\Dapper.Oracle.dll
+D:\Students\net\QLTV\QLTV\bin\Dapper.Oracle.pdb
+D:\Students\net\QLTV\QLTV\bin\CKFinder.dll
+D:\Students\net\QLTV\QLTV\bin\CKFinder.pdb
+D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache

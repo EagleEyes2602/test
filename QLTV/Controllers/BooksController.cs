@@ -50,7 +50,7 @@ namespace QLTV.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PublisherId,Name,Author,Date,Price")] Book book, HttpPostedFileBase ImageFile)
+        public ActionResult Create([Bind(Include = "Id,PublisherId,Name,Author,Date,Price,Description")] Book book, HttpPostedFileBase ImageFile)
         {
             // Book_Date_Time
             // Guid
@@ -78,6 +78,36 @@ namespace QLTV.Controllers
 
             ViewBag.PublisherId = new SelectList(db.Publishers, "Id", "Name", book.PublisherId);
             return View(book);
+        }
+
+        [HttpPost]
+        public JsonResult Add(Book book)
+        {
+            try
+            {
+                db.Books.Add(book);
+                db.SaveChanges();
+                return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { StatusCode = 500, ErrorMessage = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult Add1(int pageNum, int pageSize)
+        {
+            try
+            {
+                int b = 0;
+                int a = 1 / b;
+                return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { StatusCode = 500, ErrorMessage = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
         }
 
         bool Check(string type)
@@ -109,7 +139,7 @@ namespace QLTV.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PublisherId,Name,Author,Date,Price,Image")] Book book)
+        public ActionResult Edit([Bind(Include = "Id,PublisherId,Name,Author,Date,Price,Description")] Book book)
         {
             if (ModelState.IsValid)
             {

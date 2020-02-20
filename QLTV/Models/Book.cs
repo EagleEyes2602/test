@@ -11,7 +11,8 @@ namespace QLTV.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class Book
     {
         public int Id { get; set; }
@@ -21,6 +22,8 @@ namespace QLTV.Models
         public Nullable<int> Date { get; set; }
         public Nullable<double> Price { get; set; }
         public string Image { get; set; }
+        [AllowHtml]
+        public string Description { get; set; }
     
         public virtual Publisher Publisher { get; set; }
     }

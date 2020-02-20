@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+<h2>Login</h2>
+
+<div>
+    <input type="text" name="userName" value="" />
+    <input type="text" name="password" value="" />
+    <button id="submit">Login</button>
+</div>
+
+<script>
+    $('#submit').click(function () {
+        let dataValue = { userName: $('input[name="userName"]').val(), password: $('input[name="password"]').val() };
+        $.ajax({
+            url: '/Home/Login',
+            type: 'POST',
+            data: dataValue
+        })
+            .done(function (res) {
+                if (res.code == 200) {
+                    location.href = "/Home/Index";
+                }
+                else {
+                    alert("đăng nhập sai");
+                }
+            })
+            .fail(function () {
+
+            })
+            .always(function () {
+            });
+    });
+</script>

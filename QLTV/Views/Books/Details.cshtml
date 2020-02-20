@@ -59,6 +59,13 @@
             @Html.DisplayFor(model => model.Publisher.Name)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+        </dd>
     </dl>
 </div>
 <p>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ERP_ModelStoreContainer" CdmEntityContainer="ERP_Entities">
+    <EntitySetMapping Name="ADMINS">
+      <EntityTypeMapping TypeName="ERP_Model.ADMIN">
+        <MappingFragment StoreEntitySet="ADMINS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ADMINS_ADD" FunctionName="ERP_Model.Store.ADMINS_ADD" />
+    <FunctionImportMapping FunctionImportName="ADMINS_DELETE" FunctionName="ERP_Model.Store.ADMINS_DELETE" />
+    <FunctionImportMapping FunctionImportName="ADMINS_UPDATE" FunctionName="ERP_Model.Store.ADMINS_UPDATE" />
+  </EntityContainerMapping>
+</Mapping>
