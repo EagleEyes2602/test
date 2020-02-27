@@ -9,9 +9,9 @@ namespace QLTV.ViewModels
 {
     public class BookViewModel
     {
-        public IPagedList<Book> Books;
-        public int PageSize { get; set; }
-        public int PageNumber { get; set; }
-        public int TotalRecord { get; set; }
+        //public IPagedList<Book> Books;
+        //public int PageSize { get; set; }
+        //public int PageNumber { get; set; }
+        //public int TotalRecord { get; set; }
     }
 }
