@@ -155,6 +155,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -162,7 +164,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\Author.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\Book.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\BookBorrowReturn.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\BookBorrowReturnDetail.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\BookTitle.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\BookType.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Employee.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Publisher.cs">
@@ -183,6 +203,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTV.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\Reader.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Review.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sysdiagram.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\SystemConfigParameter.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceAccess\Entities\ADMIN.cs">
       <DependentUpon>ORCL.tt</DependentUpon>
@@ -2896,13 +2929,6 @@
     <Content Include="ResourceAccess\Entities\ORCL.edmx.diagram">
       <DependentUpon>ORCL.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Entity\QLTV.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Entity\QLTV.edmx.diagram">
-      <DependentUpon>QLTV.edmx</DependentUpon>
-    </Content>
     <Content Include="Content\Plugins\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Content\Plugins\ckfinder\userfiles\.htaccess" />
     <Content Include="Content\Plugins\ckeditor\CHANGES.md" />
@@ -3043,6 +3069,13 @@
     <Content Include="Content\assets\plugins\popper\umd\popper.min.js.map" />
     <Content Include="Content\assets\plugins\popper\umd\poppper.js.flow" />
     <Content Include="Content\Scripts\build\.jscsrc" />
+    <EntityDeploy Include="Models\Entity\QLTV.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entity\QLTV.edmx.diagram">
+      <DependentUpon>QLTV.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3075,6 +3108,7 @@
     <Content Include="Views\Publishers\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3083,6 +3117,7 @@
     <Folder Include="Content\Uploads\Photo\" />
     <Folder Include="Models\MetaData\" />
     <Folder Include="ResourceAccess\Contexts\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Books\" />
   </ItemGroup>
   <ItemGroup>

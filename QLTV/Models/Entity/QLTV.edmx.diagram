@@ -4,10 +4,36 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9389503ecb014f578b03ee53073d8353" Name="Diagram1">
-        <EntityTypeShape EntityType="QLTVModel.Book" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTVModel.Publisher" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="QLTVModel.FK__Book__PublisherI__398D8EEE" ManuallyRouted="false" />
+      <Diagram DiagramId="2ee4cc8a4c934391bc1a2e57bd4172ed" Name="Diagram1">
+        <EntityTypeShape EntityType="QLTVModel.Author" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.Book" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.BookBorrowReturn" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.BookBorrowReturnDetail" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.BookTitle" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.BookType" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.Employee" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.Publisher" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.Reader" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.Review" Width="1.5" PointX="10.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTVModel.SystemConfigParameter" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLTVModel.FK__BookTitle__Autho__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Book__BookTitleI__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Book__CreatedBy__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Book__UpdatedBy__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookBorro__BookI__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookBorro__BookB__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookBorro__Reade__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookTitle__BookT__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookTitle__Creat__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookTitle__Publi__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__BookTitle__Updat__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Review__BookTitl__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Employee__Create__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Employee__Update__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Reader__CreatedB__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Reader__UpdatedB__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTVModel.FK__Review__ReaderId__5FB337D6" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

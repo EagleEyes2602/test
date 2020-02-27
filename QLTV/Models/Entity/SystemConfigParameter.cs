@@ -12,21 +12,13 @@ namespace QLTV.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Publisher
+    public partial class SystemConfigParameter
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Publisher()
-        {
-            this.BookTitles = new HashSet<BookTitle>();
-        }
-    
         public int Id { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public string Notes { get; set; }
+        public int Code { get; set; }
+        public int Value { get; set; }
+        public Nullable<System.DateTime> CreatedTime { get; set; }
+        public string Description { get; set; }
         public Nullable<byte> Status { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookTitle> BookTitles { get; set; }
     }
 }

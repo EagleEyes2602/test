@@ -25,7 +25,17 @@ namespace QLTV.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<BookBorrowReturn> BookBorrowReturns { get; set; }
+        public virtual DbSet<BookBorrowReturnDetail> BookBorrowReturnDetails { get; set; }
+        public virtual DbSet<BookTitle> BookTitles { get; set; }
+        public virtual DbSet<BookType> BookTypes { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
+        public virtual DbSet<Reader> Readers { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<SystemConfigParameter> SystemConfigParameters { get; set; }
     }
 }

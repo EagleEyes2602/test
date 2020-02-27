@@ -12,19 +12,25 @@ namespace QLTV.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Book
+    public partial class Reader
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Book()
+        public Reader()
         {
-            this.BookBorrowReturnDetails = new HashSet<BookBorrowReturnDetail>();
+            this.BookBorrowReturns = new HashSet<BookBorrowReturn>();
+            this.Reviews = new HashSet<Review>();
         }
     
         public int Id { get; set; }
         public string Code { get; set; }
-        public int BookTitleId { get; set; }
-        public string BookLocation { get; set; }
-        public Nullable<byte> OriginalState { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string Phone { get; set; }
+        public byte Gender { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
+        public Nullable<decimal> Money { get; set; }
         public Nullable<System.DateTime> CreatedTime { get; set; }
         public Nullable<System.DateTime> UpdatedTime { get; set; }
         public Nullable<int> CreatedBy { get; set; }
@@ -32,10 +38,11 @@ namespace QLTV.Models.Entity
         public string Notes { get; set; }
         public Nullable<byte> Status { get; set; }
     
-        public virtual BookTitle BookTitle { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookBorrowReturn> BookBorrowReturns { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Employee Employee1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookBorrowReturnDetail> BookBorrowReturnDetails { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

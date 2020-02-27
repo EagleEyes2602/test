@@ -12,19 +12,26 @@ namespace QLTV.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Book
+    public partial class BookTitle
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Book()
+        public BookTitle()
         {
-            this.BookBorrowReturnDetails = new HashSet<BookBorrowReturnDetail>();
+            this.Books = new HashSet<Book>();
+            this.Reviews = new HashSet<Review>();
         }
     
         public int Id { get; set; }
         public string Code { get; set; }
-        public int BookTitleId { get; set; }
-        public string BookLocation { get; set; }
-        public Nullable<byte> OriginalState { get; set; }
+        public string Name { get; set; }
+        public int PublisherId { get; set; }
+        public int AuthorId { get; set; }
+        public int BookTypeId { get; set; }
+        public string Image { get; set; }
+        public Nullable<int> PublishYear { get; set; }
+        public Nullable<int> PageNo { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; }
         public Nullable<System.DateTime> CreatedTime { get; set; }
         public Nullable<System.DateTime> UpdatedTime { get; set; }
         public Nullable<int> CreatedBy { get; set; }
@@ -32,10 +39,14 @@ namespace QLTV.Models.Entity
         public string Notes { get; set; }
         public Nullable<byte> Status { get; set; }
     
-        public virtual BookTitle BookTitle { get; set; }
+        public virtual Author Author { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Book> Books { get; set; }
+        public virtual BookType BookType { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Publisher Publisher { get; set; }
         public virtual Employee Employee1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookBorrowReturnDetail> BookBorrowReturnDetails { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

@@ -12,21 +12,29 @@ namespace QLTV.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Publisher
+    public partial class BookBorrowReturn
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Publisher()
+        public BookBorrowReturn()
         {
-            this.BookTitles = new HashSet<BookTitle>();
+            this.BookBorrowReturnDetails = new HashSet<BookBorrowReturnDetail>();
         }
     
         public int Id { get; set; }
         public string Code { get; set; }
-        public string Name { get; set; }
+        public int ReaderId { get; set; }
+        public decimal Deposits { get; set; }
+        public decimal BorrowFee { get; set; }
+        public Nullable<decimal> PenaltyFee { get; set; }
+        public Nullable<bool> IsOnline { get; set; }
+        public Nullable<bool> IsBorrow { get; set; }
+        public Nullable<bool> IsReturn { get; set; }
+        public Nullable<System.DateTime> CreatedTime { get; set; }
+        public Nullable<System.DateTime> ReturnTime { get; set; }
         public string Notes { get; set; }
-        public Nullable<byte> Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BookTitle> BookTitles { get; set; }
+        public virtual ICollection<BookBorrowReturnDetail> BookBorrowReturnDetails { get; set; }
+        public virtual Reader Reader { get; set; }
     }
 }

@@ -12,17 +12,17 @@ namespace QLTV.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Publisher
+    public partial class BookType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Publisher()
+        public BookType()
         {
             this.BookTitles = new HashSet<BookTitle>();
         }
     
         public int Id { get; set; }
         public string Code { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Notes { get; set; }
         public Nullable<byte> Status { get; set; }
     
