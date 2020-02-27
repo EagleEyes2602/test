@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using QLTV.Models;
+using QLTV.ViewModels;
 
 namespace QLTV.Controllers
 {
@@ -20,7 +21,12 @@ namespace QLTV.Controllers
         public ActionResult Index(int pageNumber = 1, int pageSize = 10)
         {
             var books = db.Books.Include(b => b.Publisher);
-            return View(books.OrderBy(x => x.Id).ToPagedList(pageNumber, pageSize));
+            BookViewModel data = new BookViewModel();
+            data.Books = books.OrderBy(x => x.Id).ToPagedList(pageNumber, pageSize);
+            data.PageNumber = pageNumber;
+            data.PageSize = pageSize;
+            data.TotalRecord = books.Count();
+            return View(data);
         }
 
         // GET: Books/Details/5

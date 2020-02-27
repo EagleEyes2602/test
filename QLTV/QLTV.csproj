@@ -159,23 +159,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Book.cs">
+    <Compile Include="Models\Entity\Book.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Publisher.cs">
+    <Compile Include="Models\Entity\Publisher.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLTV.Context.cs">
+    <Compile Include="Models\Entity\QLTV.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTV.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLTV.cs">
+    <Compile Include="Models\Entity\QLTV.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\QLTV.Designer.cs">
+    <Compile Include="Models\Entity\QLTV.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTV.edmx</DependentUpon>
@@ -199,6 +199,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ORCL.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\BookViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -1201,12 +1202,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\QLTV.Context.tt">
+    <Content Include="Models\Entity\QLTV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\QLTV.tt">
+    <Content Include="Models\Entity\QLTV.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
@@ -1230,11 +1231,11 @@
     <Content Include="ResourceAccess\Entities\ORCL.edmx.diagram">
       <DependentUpon>ORCL.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\QLTV.edmx">
+    <EntityDeploy Include="Models\Entity\QLTV.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\QLTV.edmx.diagram">
+    <Content Include="Models\Entity\QLTV.edmx.diagram">
       <DependentUpon>QLTV.edmx</DependentUpon>
     </Content>
     <Content Include="Content\Plugins\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
@@ -1291,8 +1292,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Common\" />
+    <Folder Include="Content\Css\" />
+    <Folder Include="Content\Scripts\" />
     <Folder Include="Content\Uploads\Books\" />
     <Folder Include="Content\Uploads\Photo\" />
+    <Folder Include="Models\MetaData\" />
     <Folder Include="ResourceAccess\Contexts\" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLTV.Models
+namespace QLTV.Models.Entity
 {
     using System;
     using System.Collections.Generic;
