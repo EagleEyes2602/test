@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace QLTV.Controllers
+namespace QLTV.Areas.Admin.Controllers
 {
     public class BaseController : Controller
     {

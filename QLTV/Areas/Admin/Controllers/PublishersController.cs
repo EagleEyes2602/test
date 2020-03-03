@@ -10,7 +10,7 @@ using PagedList;
 using QLTV.Models;
 using QLTV.Models.Entity;
 
-namespace QLTV.Controllers
+namespace QLTV.Areas.Admin.Controllers
 {
     public class PublishersController : BaseController
     {
