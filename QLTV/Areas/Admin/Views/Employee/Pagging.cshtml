@@ -1,0 +1,73 @@
+﻿@using QLTV.Models.Entity
+@model QLTV.Models.ViewModels.EmployeeViewModel
+@{ 
+    int previous = Model.PageIndex - 1;
+    int next = Model.PageIndex + 1;
+}
+<!-- /.card-header -->
+<table class="table table-hover text-nowrap">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Họ và tên</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Employee item in Model.Employees as List<Employee>)
+        {
+            <tr>
+                <td>@item.Code</td>
+                <td>
+                    @if (item.Gender == 0)
+                    {
+                        <i class="fa fa-mars"></i>
+                    }
+                    else
+                    {
+                        <i class="fa fa-venus"></i>
+                    }
+                    @item.FirstName @item.LastName
+                </td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.DOB.Value.ToString("dd-MM-yyyy")</td>
+                <td>@item.Status</td>
+                <td class="action-picker">
+                    <i class="fa fa-eye" style="color:blue;" onclick="return location.href = '/Admin/Employee/Detail/@item.Id'"></i>
+                    <i class="fa fa-pencil-alt" style="color:green;" onclick="return location.href = '/Admin/Employee/Edit/@item.Id'"></i>
+                    <i class="fa fa-trash" style="color:red;" onclick="return Delete(@item.Id)"></i>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<!-- /.card-body -->
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @if (Model.PageIndex > 1)
+        {
+            <li class="page-item"><a class="page-link" onclick="Refresh('#table-engine', @previous)">Previous</a></li>
+        }
+        @for (int i = 1; i <= Model.TotalPage; i++)
+        {
+            if (i == Model.PageIndex)
+            {
+                <li class="page-item"><a class="page-link-active page-link" onclick="Refresh('#table-engine', @i)">@i</a></li>
+            }
+            else
+            {
+                <li class="page-item"><a class="page-link" onclick="Refresh('#table-engine', @i)">@i</a></li>
+            }
+        }
+        @if (Model.PageIndex < Model.TotalPage)
+        {
+            <li class="page-item"><a class="page-link" onclick="Refresh('#table-engine', @next)">Next</a></li>
+        }
+    </ul>
+</nav>
