@@ -111,6 +111,8 @@
 <script src="~/Content/Plugins/sweetalert2/sweetalert2.all.js"></script>
 <script>
     function Refresh(destination, pageIndex) {
+        console.log(destination);
+        console.log(pageIndex);
         $.ajax({
             url: '/Admin/Employee/Pagging',
             type: 'GET',
@@ -142,6 +144,7 @@
             }
         })
     }
+
     function ShowHide() {
         if ($("#input-area").first().is(":hidden")) {
             $("#input-area").slideDown();
