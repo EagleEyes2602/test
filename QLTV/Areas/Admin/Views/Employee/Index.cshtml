@@ -20,7 +20,8 @@
     .page-item {
         cursor: pointer;
     }
-    #input-area{
+
+    #input-area {
         display: none;
     }
 </style>
@@ -62,31 +63,62 @@
                         <div id="input-area" class="col-md-12 card card-primary">
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form role="form">
+                            <form role="form" action="/Admin/Employee/Add">
                                 <div class="card-body">
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">File input</label>
-                                        <div class="input-group">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text" id="">Upload</span>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Code">Mã</label>
+                                            <input type="text" class="form-control" id="Code" name="Code" placeholder="Mã">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="FirstName">Họ</label>
+                                            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Họ">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="LastName">Tên</label>
+                                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Tên">
                                         </div>
                                     </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Email">Email</label>
+                                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Password">Mật khẩu</label>
+                                            <input type="password" class="form-control" id="Password" name="Password" placeholder="Mật khẩu">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Phone">Số điện thoại</label>
+                                            <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Số điện thoại">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="DOB">Ngày sinh</label>
+                                            <input type="date" class="form-control" id="DOB" name="DOB">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Gender">Giới tính</label>
+                                            <div class="row">
+                                                <div class="custom-control custom-radio mr-4">
+                                                    <input class="custom-control-input" type="radio" id="customRadio1" name="Gender">
+                                                    <label for="customRadio1" class="custom-control-label">Nam</label>
+                                                </div>
+                                                <div class="custom-control custom-radio mr-4">
+                                                    <input class="custom-control-input" type="radio" id="customRadio2" name="Gender">
+                                                    <label for="customRadio2" class="custom-control-label">Nữ</label>
+                                                </div>
+                                                <div class="custom-control custom-radio mr-4">
+                                                    <input class="custom-control-input" type="radio" id="customRadio3" name="Gender">
+                                                    <label for="customRadio3" class="custom-control-label">Khác</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
+                                            <label for="Note">Chú thích</label>
+                                            <input type="text" class="form-control" id="Note" name="Note" placeholder="Chú thích">
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

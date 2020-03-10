@@ -10,6 +10,7 @@ namespace QLTV.Areas.Admin.Controllers
     {
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            //UserId, Controller, action
             if (filterContext.HttpContext.Session["UserInformation"] == null)
             {
                 filterContext.Result = new RedirectResult("~/Login/Index");

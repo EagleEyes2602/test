@@ -30,5 +30,21 @@ namespace QLTV.Areas.Admin.Controllers
             model.TotalPage = decimal.ToInt32(Math.Ceiling(totalPage));
             return PartialView(model);
         }
+
+        public ActionResult Add(Employee employee)
+        {
+            try
+            {
+                // Validate
+
+                // Add db
+
+                return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);
+            }
+            catch
+            {
+                return Json(new { StatusCode = 500, Message="Lỗi thêm mới" }, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }
