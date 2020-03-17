@@ -31,19 +31,27 @@ namespace QLTV.Areas.Admin.Controllers
             return PartialView(model);
         }
 
-        public ActionResult Add(Employee employee)
+        public JsonResult Add(Employee employee)
         {
             try
             {
-                // Validate
-
-                // Add db
-
-                return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);
+                if (ModelState.IsValid)
+                {
+                    // Thêm mới vào DB
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+                    return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    // Tên input , lỗi
+                    IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                    return Json(new { StatusCode = 500, Message = allErrors.FirstOrDefault().ErrorMessage }, JsonRequestBehavior.AllowGet);
+                }
             }
             catch
             {
-                return Json(new { StatusCode = 500, Message="Lỗi thêm mới" }, JsonRequestBehavior.AllowGet);
+                return Json(new { StatusCode = 505, Message="Lỗi thêm mới" }, JsonRequestBehavior.AllowGet);
             }
         }
     }

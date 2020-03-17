@@ -63,6 +63,7 @@
                         <div id="input-area" class="col-md-12 card card-primary">
                             <!-- /.card-header -->
                             <!-- form start -->
+                            <form id="employee-form" action="/" method="post">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-group">
@@ -101,15 +102,15 @@
                                             <label for="Gender">Giới tính</label>
                                             <div class="row">
                                                 <div class="custom-control custom-radio mr-4">
-                                                    <input class="custom-control-input" type="radio" id="customRadio1" name="Gender">
+                                                    <input class="custom-control-input" type="radio" id="customRadio1" name="Gender" value="0">
                                                     <label for="customRadio1" class="custom-control-label">Nam</label>
                                                 </div>
                                                 <div class="custom-control custom-radio mr-4">
-                                                    <input class="custom-control-input" type="radio" id="customRadio2" name="Gender">
+                                                    <input class="custom-control-input" type="radio" id="customRadio2" name="Gender" value="1">
                                                     <label for="customRadio2" class="custom-control-label">Nữ</label>
                                                 </div>
                                                 <div class="custom-control custom-radio mr-4">
-                                                    <input class="custom-control-input" type="radio" id="customRadio3" name="Gender">
+                                                    <input class="custom-control-input" type="radio" id="customRadio3" name="Gender" value="2">
                                                     <label for="customRadio3" class="custom-control-label">Khác</label>
                                                 </div>
                                             </div>
@@ -120,11 +121,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
-
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-primary" onclick="Add();">Submit</button>
-                                </div>
+                            </form>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="button" class="btn btn-primary" onclick="Add();">Submit</button>
+                            </div>
                         </div>
                         <!-- /.card -->
                         <div id="table-engine" class="card-body table-responsive p-0">
@@ -151,6 +152,35 @@
         })
             .done(function (res) {
                 $(destination).html(res);
+            })
+            .fail(function () {
+                console.log("error");
+            })
+            .always(function () {
+                console.log("complete");
+            });
+    }
+
+    function Add() {
+        let data = $('#employee-form').serialize();
+        console.log(data);
+        $.ajax({
+            url: '/Admin/Employee/Add',
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+        })
+            .done(function (res) {
+                if (res.StatusCode == 200) {
+                    toastr.success('Thêm mới thành công!', 'Success !!!');
+                    // Refresh()
+                }
+                else {
+                    toastr.error(res.Message, 'Error !!!');
+                    // duyệt từng lỗi
+                    // item
+                    // JS Jquery $('input[name="'+item.name-error+'"]').
+                }
             })
             .fail(function () {
                 console.log("error");

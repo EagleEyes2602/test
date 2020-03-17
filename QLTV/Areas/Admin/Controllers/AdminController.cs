@@ -8,7 +8,6 @@ namespace QLTV.Areas.Admin.Controllers
 {
     public class AdminController : BaseController
     {
-        // GET: Admin
         public ActionResult Dashboard()
         {
             return View();
