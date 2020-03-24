@@ -51,6 +51,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\Plugins\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Dapper.Oracle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.Oracle.1.2.1\lib\net452\Dapper.Oracle.dll</HintPath>
     </Reference>
@@ -240,6 +243,7 @@
       <DependentUpon>ORCL.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\BookViewModel.cs" />
+    <Compile Include="Services\GenericService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\adminlte.css" />

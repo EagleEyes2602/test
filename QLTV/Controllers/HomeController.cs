@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using QLTV.ResourceAccess.Entities;
 //using QLTV.Service;
 using Dapper;
+using QLTV.Services;
+using QLTV.Models.Entity;
 
 namespace QLTV.Controllers
 {
@@ -13,7 +15,31 @@ namespace QLTV.Controllers
     {
         public ActionResult Index()
         {
-            var authen = Session["UserAuthentication"];
+            GenericService<Employee> employee = new GenericService<Employee>();
+            DynamicParameters param = new DynamicParameters();
+
+            // Lấy 1 bản ghi
+            //param.Add("@Id", 1);
+            //var employeeData = employee.ExcuteSingle("Employee_GetById", param);
+
+            // Lấy nhiều bản ghi
+            //var employeeData = employee.ExcuteMany("Employee_GetAll", null);
+
+            // Insert update deleteparam.Add("@Code", 1);
+            param.Add("@Code", "123");
+            param.Add("@FirstName", "qwe");
+            param.Add("@LastName", "ert");
+            param.Add("@Email", "abc@gmail.com");
+            param.Add("@Password", "asjkdh");
+            param.Add("@Phone", "askjdh");
+            param.Add("@Gender", 1);
+            param.Add("@DOB", DateTime.Now);
+            param.Add("@CreatedBy", 1);
+            param.Add("@Notes", "");
+            param.Add("@Status", 1);
+            var employeeAdd = employee.ExcuteNoneQuery("Employee_Add", param);
+
+            var employeeData = employee.ExcuteMany("Employee_GetAll", null);
             return View();
         }
 

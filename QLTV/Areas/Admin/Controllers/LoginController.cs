@@ -22,7 +22,8 @@ namespace QLTV.Areas.Admin.Controllers
             {
                 if (model.Email == "vietqq@gmail.com" && model.Password == "123456")
                 {
-                    Session["UserInformation"] = "vietqq@gmail.com";
+                    model.EmployeeId = 1;
+                    Session["UserInformation"] = model.EmployeeId;
                     return Json(new { Code = 200 }, JsonRequestBehavior.AllowGet);
                 }
                 return Json(new { Code = 500, ErrorMessage = "Đăng nhập thất bại" }, JsonRequestBehavior.AllowGet);

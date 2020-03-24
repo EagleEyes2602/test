@@ -92,3 +92,5 @@ D:\Students\net\QLTV\QLTV\bin\Dapper.Oracle.pdb
 D:\Students\net\QLTV\QLTV\bin\CKFinder.dll
 D:\Students\net\QLTV\QLTV\bin\CKFinder.pdb
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
+D:\Students\net\QLTV\QLTV\bin\Dapper.dll
+D:\Students\net\QLTV\QLTV\bin\Dapper.xml
