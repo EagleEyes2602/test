@@ -16,6 +16,7 @@ namespace QLTV.Controllers
         public ActionResult Index()
         {
             GenericService<Employee> employee = new GenericService<Employee>();
+
             DynamicParameters param = new DynamicParameters();
 
             // Lấy 1 bản ghi
