@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace QLTV.Areas.Admin.Controllers
@@ -34,8 +33,9 @@ namespace QLTV.Areas.Admin.Controllers
 
         public JsonResult Add(Employee employee)
         {
-            try
-            {
+            //try
+            //{
+                employee.Id = 1;
                 if (ModelState.IsValid)
                 {
                     // Thêm mới vào DB
@@ -51,11 +51,11 @@ namespace QLTV.Areas.Admin.Controllers
                     IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
                     return Json(new { StatusCode = 500, Message = allErrors.FirstOrDefault().ErrorMessage }, JsonRequestBehavior.AllowGet);
                 }
-            }
-            catch
-            {
-                return Json(new { StatusCode = 505, Message = "Lỗi thêm mới" }, JsonRequestBehavior.AllowGet);
-            }
+            //}
+            //catch
+            //{
+            //    return Json(new { StatusCode = 505, Message = "Lỗi thêm mới" }, JsonRequestBehavior.AllowGet);
+            //}
         }
         /// <summary>
         /// 
@@ -69,20 +69,9 @@ namespace QLTV.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     // Sửa bản ghi trong DB
-                    Employee employeeModified = new Employee();
-                    employeeModified.Code = employee.Code;
-                    employeeModified.FirstName = employee.FirstName;
-                    employeeModified.LastName = employee.LastName;
-                    employeeModified.Email = employee.Email;
-                    employeeModified.DOB = employee.DOB;
-                    employeeModified.Phone = employee.Phone;
-                    employeeModified.Gender = employee.Gender;
-                    employeeModified.CreatedTime = employee.CreatedTime;
-                    employeeModified.CreatedBy = employee.CreatedBy;
+                    Employee employeeModified = employee;
                     employeeModified.UpdatedTime = DateTime.Now;
                     employeeModified.UpdatedBy = GetUserInformation();
-                    employeeModified.Notes = employee.Notes;
-                    employeeModified.Status = employee.Status;
                     db.Entry(employee).State = EntityState.Modified;
                     db.SaveChanges();
                     return Json(new { StatusCode = 200 }, JsonRequestBehavior.AllowGet);

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2ee4cc8a4c934391bc1a2e57bd4172ed" Name="Diagram1">
+      <Diagram DiagramId="240955c3f52f4ef0a21d57a2b04bdb24" Name="Diagram1">
         <EntityTypeShape EntityType="QLTVModel.Author" Width="1.5" PointX="3.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTVModel.Book" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTVModel.BookBorrowReturn" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />

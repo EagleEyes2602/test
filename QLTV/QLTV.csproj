@@ -79,6 +79,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -87,6 +90,12 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -155,9 +164,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\DefaultController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
@@ -191,6 +202,12 @@
     <Compile Include="Models\Entity\Employee.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Entity\Employee_GetAll_Result.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\Employee_GetById_Result.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Entity\Publisher.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
@@ -213,6 +230,12 @@
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\Review.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLTV.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entity\sp_helpdiagrams_Result.cs">
       <DependentUpon>QLTV.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Entity\sysdiagram.cs">
@@ -3077,6 +3100,10 @@
     <Content Include="Content\assets\plugins\popper\umd\popper.min.js.map" />
     <Content Include="Content\assets\plugins\popper\umd\poppper.js.flow" />
     <Content Include="Content\Scripts\build\.jscsrc" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Employee\Pagging.cshtml" />
     <EntityDeploy Include="Models\Entity\QLTV.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
@@ -3084,10 +3111,6 @@
     <Content Include="Models\Entity\QLTV.edmx.diagram">
       <DependentUpon>QLTV.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Employee\Pagging.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

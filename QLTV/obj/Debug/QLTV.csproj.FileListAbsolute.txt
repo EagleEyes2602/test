@@ -94,3 +94,9 @@ D:\Students\net\QLTV\QLTV\bin\CKFinder.pdb
 D:\Students\net\QLTV\QLTV\obj\Debug\QLTV.csprojAssemblyReference.cache
 D:\Students\net\QLTV\QLTV\bin\Dapper.dll
 D:\Students\net\QLTV\QLTV\bin\Dapper.xml
+D:\Students\net\QLTV\QLTV\bin\System.Net.Http.Formatting.dll
+D:\Students\net\QLTV\QLTV\bin\System.Web.Http.dll
+D:\Students\net\QLTV\QLTV\bin\System.Web.Http.WebHost.dll
+D:\Students\net\QLTV\QLTV\bin\System.Net.Http.Formatting.xml
+D:\Students\net\QLTV\QLTV\bin\System.Web.Http.xml
+D:\Students\net\QLTV\QLTV\bin\System.Web.Http.WebHost.xml
