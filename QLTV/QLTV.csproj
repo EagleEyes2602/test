@@ -173,6 +173,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthorController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BookTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -3111,6 +3112,11 @@
     <Content Include="Models\Entity\QLTV.edmx.diagram">
       <DependentUpon>QLTV.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\BookTypes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTypes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTypes\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTypes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\BookTypes\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

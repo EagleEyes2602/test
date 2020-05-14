@@ -6,114 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PagedList;
-using QLTV.Models;
 using QLTV.Models.Entity;
 
 namespace QLTV.Areas.Admin.Controllers
 {
-    public class PublishersController : BaseController
+    public class BookTypesController : Controller
     {
         private QLTVEntities db = new QLTVEntities();
 
-        // GET: Publishers
-        public ActionResult Index(int pageNumber = 1, int pageSize = 5)
+        // GET: Admin/BookTypes
+        public ActionResult Index()
         {
-            var data = db.Publishers.OrderBy(x => x.Id).ToPagedList(pageNumber, pageSize);
-            return View(data);
+            return View(db.BookTypes.ToList());
         }
 
-        // GET: Publishers/Details/5
+        // GET: Admin/BookTypes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Publisher publisher = db.Publishers.Find(id);
-            if (publisher == null)
+            BookType bookType = db.BookTypes.Find(id);
+            if (bookType == null)
             {
                 return HttpNotFound();
             }
-            return View(publisher);
+            return View(bookType);
         }
 
-        // GET: Publishers/Create
+        // GET: Admin/BookTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Publishers/Create
+        // POST: Admin/BookTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Code,Name,Notes,Status")] Publisher publisher)
+        public ActionResult Create([Bind(Include = "Id,Code,Title,Notes,Status")] BookType bookType)
         {
             if (ModelState.IsValid)
             {
-                db.Publishers.Add(publisher);
+                db.BookTypes.Add(bookType);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(publisher);
+            return View(bookType);
         }
 
-        // GET: Publishers/Edit/5
+        // GET: Admin/BookTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Publisher publisher = db.Publishers.Find(id);
-            if (publisher == null)
+            BookType bookType = db.BookTypes.Find(id);
+            if (bookType == null)
             {
                 return HttpNotFound();
             }
-            return View(publisher);
+            return View(bookType);
         }
 
-        // POST: Publishers/Edit/5
+        // POST: Admin/BookTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Code,Name,Notes,Status")] Publisher publisher)
+        public ActionResult Edit([Bind(Include = "Id,Code,Title,Notes,Status")] BookType bookType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(publisher).State = EntityState.Modified;
+                db.Entry(bookType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(publisher);
+            return View(bookType);
         }
 
-        // GET: Publishers/Delete/5
+        // GET: Admin/BookTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Publisher publisher = db.Publishers.Find(id);
-            if (publisher == null)
+            BookType bookType = db.BookTypes.Find(id);
+            if (bookType == null)
             {
                 return HttpNotFound();
             }
-            return View(publisher);
+            return View(bookType);
         }
 
-        // POST: Publishers/Delete/5
+        // POST: Admin/BookTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Publisher publisher = db.Publishers.Find(id);
-            db.Publishers.Remove(publisher);
+            BookType bookType = db.BookTypes.Find(id);
+            db.BookTypes.Remove(bookType);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

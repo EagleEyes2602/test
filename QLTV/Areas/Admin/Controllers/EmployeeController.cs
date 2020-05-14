@@ -17,7 +17,7 @@ namespace QLTV.Areas.Admin.Controllers
             return View();
         }
 
-        public PartialViewResult Pagging(int pageIndex = 1, int pageSize = 1)
+        public PartialViewResult Pagging(int pageIndex = 1, int pageSize = 5)
         {
             EmployeeViewModel model = new EmployeeViewModel();
             int upper = (pageIndex - 1) * pageSize;
@@ -35,7 +35,7 @@ namespace QLTV.Areas.Admin.Controllers
         {
             //try
             //{
-                employee.Id = 1;
+                employee.Id = 0;
                 if (ModelState.IsValid)
                 {
                     // Thêm mới vào DB

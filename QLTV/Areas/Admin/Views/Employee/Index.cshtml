@@ -142,8 +142,6 @@
 <script src="~/Content/Plugins/sweetalert2/sweetalert2.all.js"></script>
 <script>
     function Refresh(destination, pageIndex) {
-        console.log(destination);
-        console.log(pageIndex);
         $.ajax({
             url: '/Admin/Employee/Pagging',
             type: 'GET',
@@ -162,6 +160,8 @@
     }
 
     function Add() {
+        debugger
+        let firstName = $('#employee-form input[name="FirstName"]').value();
         let data = $('#employee-form').serialize();
         console.log(data);
         $.ajax({
@@ -173,6 +173,7 @@
             .done(function (res) {
                 if (res.StatusCode == 200) {
                     toastr.success('Thêm mới thành công!', 'Success !!!');
+                    Refresh('#table-engine', 1);
                     // Refresh()
                 }
                 else {
@@ -189,7 +190,6 @@
                 console.log("complete");
             });
     }
-
 
     function Update() {
         let data = $('#employee-form').serialize();
@@ -219,7 +219,6 @@
                 console.log("complete");
             });
     }
-
 
     function Delete(id) {
         Swal.fire({
